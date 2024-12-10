@@ -70,8 +70,9 @@ export default function AnimeViewer({ params }: { params: { id: string } }) {
 							</div> */}
 							<video
 								className="w-full aspect-video"
-								src={`${anime.episode}${String(currentEpisode).padStart(2, "0")}.mp4`}
+								src={`/api/proxy-media?url=${encodeURIComponent(`${anime.episode}${String(currentEpisode).padStart(2, "0")}.mp4`)}`}
 								controls
+								playsInline
 							/>
 						</div>
 						<div className="flex  space-x-4">

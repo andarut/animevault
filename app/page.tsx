@@ -23,7 +23,7 @@ export default function Home() {
 						<div className="bg-white border-2 border-black transition-all duration-300 overflow-hidden manga-card flex flex-col h-full">
 							<div className="relative aspect-[3/4] flex-shrink-0">
 								<Image
-									src={anime.image}
+									src={`/api/proxy-media?url=${encodeURIComponent(anime.image)}`}
 									alt={anime.title}
 									layout="fill"
 									objectFit="cover"

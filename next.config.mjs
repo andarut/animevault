@@ -14,7 +14,15 @@ const nextConfig = {
 		ignoreBuildErrors: true,
 	},
 	images: {
-		unoptimized: true,
+		domains: ["localhost", "animevault-one.vercel.app"],
+	},
+	async rewrites() {
+		return [
+			{
+				source: "/api/proxy-media",
+				destination: "/api/proxy-media",
+			},
+		];
 	},
 	experimental: {
 		webpackBuildWorker: true,
