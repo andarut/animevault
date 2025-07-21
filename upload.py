@@ -11,6 +11,8 @@ DIR = "Akusher.S01"
 
 y = yadisk.YaDisk(token=TOKEN)
 
+# TODO: try y.get_upload_link and so on to get link of uploaded file
+
 print(y.check_token())
 
 def upload(client: yadisk.Client, from_dir: str, to_dir: str):
@@ -30,4 +32,5 @@ def upload(client: yadisk.Client, from_dir: str, to_dir: str):
             print(f"UPLOADING {in_path}... ")
 
             client.upload(in_path, file_path, overwrite=True)
+
 upload(y, DIR, DIR)
